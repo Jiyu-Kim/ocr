@@ -29,7 +29,8 @@ class Tesseract:
         box_num = len(bounds['level'])
         for i in range(box_num):
             if(bounds['text'][i] != ""):
-                temp = defaultdict()
+                #temp = defaultdict()
+                temp = dict()
                 text = bounds['text'][i]
                 x = bounds['left'][i]
                 y = bounds['top'][i]
@@ -44,5 +45,6 @@ class Tesseract:
 
                 data.append(temp)
 
-        with open('data.json', "w", encoding="utf-8") as make_file:
-            json.dump(data, make_file, ensure_ascii=False, indent="\t", cls=NpEncoder)
+        #with open('data.json', "w", encoding="utf-8") as make_file:
+            #json.dump(data, make_file, ensure_ascii=False, indent="\t", cls=NpEncoder)\
+        return data
