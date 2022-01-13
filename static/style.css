@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#section-container {
+    display: flex;
+}
+.section {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+#section-container section:first-child {
+    margin-right: 30px;
+}
+
