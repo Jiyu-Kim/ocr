@@ -30,7 +30,8 @@ class EasyOCR:
         # Create json file
         data = []
         for bound in bounds:
-            temp = defaultdict()
+            #temp = defaultdict()
+            temp = dict()
             text = bound[1]
             top_left = bound[0][0] # [([top_left, top_right, botton_right, bottom_left], text_detacted, confident_level)]
             bottom_right = bound[0][2]
@@ -47,5 +48,7 @@ class EasyOCR:
             
             data.append(temp)
             
-        with open('data.json', "w", encoding="utf-8") as make_file:
-            json.dump(data, make_file, ensure_ascii=False, indent="\t", cls=NpEncoder)
+        #with open('data.json', "w", encoding="utf-8") as make_file:
+            #json.dump(data, make_file, ensure_ascii=False, indent="\t", cls=NpEncoder)
+        
+        return data
