@@ -17,7 +17,12 @@
             <h2>Input Image</h2>
             <div id="image-preview"></div>
             <form action = "http://localhost:5000/fileupload" method = "POST" enctype = "multipart/form-data">
-                <input name="file" type="file" accept="image/*" onchange="setThumbnail(event);"/>
+                <input name="file" type="file" accept="image/*" required onchange="setThumbnail(event);"/>
+                <select name = "engine">
+                    {% for i in engine_types %}
+                        <option value={{i}}>{{i}}</option>
+                    {% endfor %}
+                </select>
                 <input type="submit" value="submit"/>
             </form>
         </section>
